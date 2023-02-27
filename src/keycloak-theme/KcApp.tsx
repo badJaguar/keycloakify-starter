@@ -39,8 +39,8 @@ export default function App(props: { kcContext: KcContext; }) {
     const pageProps = {
         i18n,
         // Here we have overloaded the default template, however you could use the default one with:  
-        Template: DefaultTemplate,
-        // Template,
+        //Template: DefaultTemplate,
+        Template,
         // Wether or not we should download the CSS and JS resources that comes with the default Keycloak theme.  
         doFetchDefaultThemeResources: true,
         ...kcProps,
