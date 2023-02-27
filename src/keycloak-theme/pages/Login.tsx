@@ -40,6 +40,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
 			displayInfo={social.displayInfo}
 			displayWide={realm.password && social.providers !== undefined}
 			headerNode={msg("doLogIn")}
+      
 			formNode={
 				<div id="kc-form" className={clsx(realm.password && social.providers !== undefined && kcProps.kcContentWrapperClass)}>
 					<div

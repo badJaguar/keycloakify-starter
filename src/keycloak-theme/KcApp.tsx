@@ -2,7 +2,7 @@ import "./KcApp.css";
 import { lazy, Suspense } from "react";
 import type { KcContext } from "./kcContext";
 import { useI18n } from "./i18n";
-import Fallback, { defaultKcProps, type KcProps, type PageProps } from "keycloakify";
+import Fallback, { defaultKcProps, type KcProps } from "keycloakify";
 import Template from "./Template";
 import DefaultTemplate from "keycloakify/lib/Template";
 
@@ -36,11 +36,11 @@ export default function App(props: { kcContext: KcContext; }) {
         return null;
     }
 
-    const pageProps: Omit<PageProps<any, typeof i18n>, "kcContext"> = {
+    const pageProps = {
         i18n,
         // Here we have overloaded the default template, however you could use the default one with:  
-        //Template: DefaultTemplate,
-        Template,
+        Template: DefaultTemplate,
+        // Template,
         // Wether or not we should download the CSS and JS resources that comes with the default Keycloak theme.  
         doFetchDefaultThemeResources: true,
         ...kcProps,
