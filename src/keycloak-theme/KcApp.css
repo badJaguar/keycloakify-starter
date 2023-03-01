@@ -1,10 +1,5 @@
-
-.my-color {
-	color: red;
-}
-
-.my-font {
-	font-family: 'Work Sans';
+* {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
 }
 
 .my-root-class {
@@ -12,5 +7,33 @@
 }
 
 .my-root-class body {
-	background: url(./assets/background.svg) no-repeat center center fixed;
+	background: white;
+}
+
+.card-pf {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 7px 8px -4px rgb(0 0 0 / 20%), 0px 12px 17px 2px rgb(0 0 0 / 14%), 0px 5px 22px 4px rgb(0 0 0 / 12%);
+  min-width: 600px;
+}
+
+#root{
+  height: 100%;
+}
+
+.login-pf-page {
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+
+#kc-form-options span {
+  display: flex;
+  margin-right: 4px;
+}
+
+
+#kc-form-options svg {
+  width: 2rem;
+  height: 2rem;
 }
