@@ -8,7 +8,7 @@
 # that is going to be in production. (CRA generates hashes, every build is different, even if the code is the same)
 
 # build environment
-FROM alpine as build
+FROM alpine:latest@sha256:69665d02cb32192e52e07644d76bc6f25abeb5410edc1c7a81a10ba3f0efb90a as build
 WORKDIR /app
 #We use ADD instead of COPY because build/ is in .dockerignore
 ADD build.tar .
