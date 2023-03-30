@@ -8,14 +8,14 @@
 # that is going to be in production. (CRA generates hashes, every build is different, even if the code is the same)
 
 # build environment
-FROM alpine as build
+FROM alpine:latest@sha256:ff6bdca1701f3a8a67e328815ff2346b0e4067d32ec36b7992c1fdc001dc8517 as build
 WORKDIR /app
 #We use ADD instead of COPY because build/ is in .dockerignore
 ADD build.tar .
 COPY nginx.conf .
 
 # production environment (copy pasted from ./Dockerfile)
-FROM nginx:stable-alpine
+FROM nginx:stable-alpine@sha256:da9ddedc61974b42521c8b0535df5f6c5087fa41d4e1b6ac67c547002a710a22
 COPY --from=build /app/build /usr/share/nginx/html
 COPY --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
 CMD nginx -g 'daemon off;'
